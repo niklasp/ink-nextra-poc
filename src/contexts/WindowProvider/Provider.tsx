@@ -1,20 +1,28 @@
-import React from 'react'
-import { WindowContext } from './context'
+"use client";
 
-export const WindowProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [scrollY, setOffset] = React.useState(0)
+import React from "react";
+import { WindowContext } from "./context";
+
+export const WindowProvider: React.FC<React.PropsWithChildren> = ({
+  children,
+}) => {
+  const [scrollY, setOffset] = React.useState(0);
 
   const handleScroll = () => {
-    setOffset(window.scrollY)
-  }
+    setOffset(window.scrollY);
+  };
 
   React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { capture: true })
+    window.addEventListener("scroll", handleScroll, { capture: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [handleScroll])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
 
-  return <WindowContext.Provider value={{ ...{ scrollY } }}>{children}</WindowContext.Provider>
-}
+  return (
+    <WindowContext.Provider value={{ ...{ scrollY } }}>
+      {children}
+    </WindowContext.Provider>
+  );
+};

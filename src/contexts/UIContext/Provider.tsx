@@ -1,8 +1,14 @@
-import React from 'react'
-import { UIContext } from './context'
+"use client";
+
+import React from "react";
+import { UIContext } from "./context";
 
 export const UIProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [showSidebar, setShowSidebar] = React.useState(false)
+  const [showSidebar, setShowSidebar] = React.useState(false);
 
-  return <UIContext.Provider value={{ showSidebar, setShowSidebar }}>{children}</UIContext.Provider>
-}
+  return (
+    <UIContext.Provider value={{ showSidebar, setShowSidebar }}>
+      {children}
+    </UIContext.Provider>
+  );
+};

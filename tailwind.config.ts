@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-  darkMode: ["class"],
+  darkMode: ["class", "media"],
+
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -17,12 +18,22 @@ const config = {
         "2xl": "1400px",
       },
     },
+    backgroundImage: {
+      waves: "url('/img/Waves.svg')",
+      "waves-light": "url('/img/Waves-light.svg')",
+      "brand-gradient":
+        "linear-gradient(244.1deg, #9C45FC 12.55%, #A95DFC 32.31%, #BD83FD 86.37%)",
+      "inkubator-banner-light": "url('/img/inkubator-tile-banner-light.svg')",
+      "inkubator-banner-dark": "url('/img/inkubator-tile-banner-dark.svg')",
+      "gradient-1": "linear-gradient(180deg, #FFFFFF 0%, #EFEFEF 100%);",
+      "gradient-1-dark": "linear-gradient(180deg, #1B1B1D 0%, #242526 100%);",
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        // background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -52,6 +63,28 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "brand-500": "#BD83FD",
+        "brand-800": "#5a007e",
+        brand: {
+          DEFAULT: "#BD83FD",
+          500: "#BD83FD",
+          800: "#5a007e",
+        },
+        background: {
+          100: "#F2F2F3",
+          300: "#D6D8DC",
+          700: "#444950",
+          800: "#242526",
+          900: "#090909",
+        },
+        "light-background": "white",
+        "dark-background": "#1b1b1d",
+        transparent: "rgba(0,0,0,0)",
+      },
+      fontFamily: {
+        montserrat: ["Montserrat"],
+        nunito: "Nunito Sans",
+        lora: "Lora, serif",
       },
       borderRadius: {
         lg: "var(--radius)",

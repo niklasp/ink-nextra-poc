@@ -1,26 +1,12 @@
-import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import { Banner, Head } from "nextra/components";
-import { getPageMap } from "nextra/page-map";
-import "nextra-theme-docs/style.css";
+import { Head } from "nextra/components";
+import "@/app/globals.scss";
+import "@/style/ink.scss";
 
-import "./globals.scss";
-
-export const metadata = {
-  // Define your metadata here
-  // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-};
-
-const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>;
-const navbar = (
-  <Navbar
-    logo={<b>Nextra</b>}
-    // ... Your additional navbar options
-  />
-);
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
-
-export default async function RootLayout({ children }) {
-  const pageMap = await getPageMap();
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
@@ -33,27 +19,7 @@ export default async function RootLayout({ children }) {
       >
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
-      <body className="min-h-screen dark:bg-gradient-to-b dark:from-purple-900 dark:via-black dark:to-purple-400 font-sans antialiased">
-        <Layout
-          banner={banner}
-          navbar={navbar}
-          pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
-          footer={footer}
-          sidebar={{
-            autoCollapse: true,
-            defaultOpen: true,
-            defaultMenuCollapseLevel: 1,
-          }}
-          navigation={{
-            prev: true,
-            next: true,
-          }}
-        >
-          {children}
-          {/* <pre>{JSON.stringify(pageMap, null, 2)}</pre> */}
-        </Layout>
-      </body>
+      <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );
 }

@@ -1,5 +1,5 @@
+import clsx from "clsx";
 import React from "react";
-import { cn } from "@/lib/utils";
 
 export const CtaArrow: React.FC<{ className?: string; white?: boolean }> = ({
   className,
@@ -13,7 +13,7 @@ export const CtaArrow: React.FC<{ className?: string; white?: boolean }> = ({
       className={className}
     >
       <path
-        className={cn(
+        className={clsx(
           "dark:stroke-white stroke-black",
           white && "stroke-white"
         )}

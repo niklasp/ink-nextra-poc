@@ -1,9 +1,10 @@
-import React from 'react';
+"use client";
+import { createContext } from "react";
 
 export interface WindowProps {
-   scrollY: number;
-} 
+  scrollY: number;
+}
 
-export const WindowContext = React.createContext<WindowProps>({
-   scrollY: 0
+export const WindowContext = createContext<WindowProps>({
+  scrollY: 0,
 });

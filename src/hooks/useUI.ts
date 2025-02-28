@@ -1,4 +1,6 @@
-import { useContext } from 'react'
-import { UIContext } from '../contexts/UIContext/context'
+"use client";
 
-export const useUI = () => useContext(UIContext)
+import { useContext } from "react";
+import { UIContext } from "../contexts/UIContext/context";
+
+export const useUI = () => useContext(UIContext);

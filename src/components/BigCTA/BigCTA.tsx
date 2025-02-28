@@ -1,9 +1,8 @@
 "use client";
-
 import React, { useState } from "react";
 import { CtaArrow } from "../icons";
 import { ClassNameable } from "../types";
-import { cn } from "@/lib/utils";
+import clsx from "clsx";
 
 interface BigCtaProps extends ClassNameable {
   title: string;
@@ -35,7 +34,7 @@ export const BigCTA: React.FC<
         setIsHovering(false);
       }}
       tabIndex={tabIndex}
-      className={cn(
+      className={clsx(
         "flex flex-col justify-between",
         "ring-brand-500 outline-brand-500 p-6 rounded-xl dark:border-background-700",
         "border-background-300 hover:cursor-pointer min-h-[180px] border-solid border",
@@ -56,7 +55,7 @@ export const BigCTA: React.FC<
         <h3 className="md:text-7xl text-5xl font-montserrat m-0 font-bold leading-[120%]">
           {emphasized && (
             <i
-              className={classNames(
+              className={clsx(
                 "mb-12 mr-6 underline",
                 isHovering ? "text-white" : "text-brand-500"
               )}

@@ -1,26 +1,36 @@
-import classNames from 'classnames'
-import React from 'react'
-import { ClassNameable } from '../types'
+import clsx from "clsx";
+import React from "react";
+import { ClassNameable } from "../types";
 
 export interface InfoCardProps extends ClassNameable {
-  superTitle: string
-  title: string
-  info?: string[]
-  bullets?: string[]
+  superTitle: string;
+  title: string;
+  info?: string[];
+  bullets?: string[];
 }
 
-export const InfoCard: React.FC<InfoCardProps> = ({ title, superTitle, info, bullets, className }) => {
+export const InfoCard: React.FC<InfoCardProps> = ({
+  title,
+  superTitle,
+  info,
+  bullets,
+  className,
+}) => {
   return (
     <div
-      className={classNames(
-        'border-background-300 border-solid border',
-        'bg-none ring-brand-500 outline-brand-500 p-6 rounded-xl dark:border-background-700',
-        className,
+      className={clsx(
+        "border-background-300 border-solid border",
+        "bg-none ring-brand-500 outline-brand-500 p-6 rounded-xl dark:border-background-700",
+        className
       )}
     >
       <hgroup>
         {<h5 className="uppercase text-base p-0 m-0">{superTitle}</h5>}
-        {<h4 className="text-3xl p-0 mt-4 text-brand-500 font-bold">{title}</h4>}
+        {
+          <h4 className="text-3xl p-0 mt-4 text-brand-500 font-bold">
+            {title}
+          </h4>
+        }
       </hgroup>
 
       <div className="mt-8">
@@ -39,5 +49,5 @@ export const InfoCard: React.FC<InfoCardProps> = ({ title, superTitle, info, bul
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
