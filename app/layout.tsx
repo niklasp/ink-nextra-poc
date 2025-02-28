@@ -1,6 +1,7 @@
 import { Head } from "nextra/components";
 import "@/app/globals.scss";
 import "@/style/ink.scss";
+import "@/style/legacy.scss";
 
 export default function RootLayout({
   children,
@@ -19,7 +20,9 @@ export default function RootLayout({
       >
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
-      <body className="min-h-screen font-sans antialiased">{children}</body>
+      <body className="dark min-h-screen font-sans antialiased">
+        {children}
+      </body>
     </html>
   );
 }
