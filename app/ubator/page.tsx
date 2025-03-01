@@ -17,8 +17,8 @@ export const metadata = {
 
 export default function PageInkubator() {
   return (
-    <div className="font-montserrat bg-gray-900 rounded-b-3xl">
-      <div className="bg-light-background dark:bg-dark-background rounded-b-3xl xl:pb-12 pb-4 md:pt-40 pt-28">
+    <div className="dark font-montserrat bg-gray-900 rounded-b-3xl">
+      <div className="bg-dark-background rounded-b-3xl xl:pb-12 pb-4 md:pt-40 pt-28">
         <Nav />
         <SidebarMenu />
         <Hero className="overflow-hidden" />
