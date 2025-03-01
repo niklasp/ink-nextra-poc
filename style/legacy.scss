@@ -60,19 +60,19 @@ label {
   color: #fafafa;
 }
 
-input {
-  background-color: var(--ifm-color-primary-medium);
-  color: #fafafa;
-  border-radius: 1rem;
-  padding: 1rem 2rem;
-  margin: 0.5rem 0 0;
-  border: none;
-  width: 100%;
-}
+// input {
+//   background-color: var(--ifm-color-primary-medium);
+//   color: #fafafa;
+//   border-radius: 1rem;
+//   padding: 1rem 2rem;
+//   margin: 0.5rem 0 0;
+//   border: none;
+//   width: 100%;
+// }
 
-input:focus-visible {
-  border: none;
-}
+// input:focus-visible {
+//   border: none;
+// }
 
 .w-full {
   width: 100%;
@@ -82,20 +82,20 @@ input:focus-visible {
   border: none;
 }
 
-input::-webkit-input-placeholder {
-  /* Edge */
-  color: var(--ifm-color-primary-lightest);
-}
+// input::-webkit-input-placeholder {
+//   /* Edge */
+//   color: var(--ifm-color-primary-lightest);
+// }
 
-input:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: var(--ifm-color-primary-lightest);
-}
+// input:-ms-input-placeholder {
+//   /* Internet Explorer 10-11 */
+//   color: var(--ifm-color-primary-lightest);
+// }
 
-input::placeholder {
-  color: red;
-  color: var(--ifm-color-primary-lightest);
-}
+// input::placeholder {
+//   color: red;
+//   color: var(--ifm-color-primary-lightest);
+// }
 
 fieldset {
   border: none;
