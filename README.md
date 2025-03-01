@@ -9,6 +9,12 @@ developer-friendly documentation experience.
 
 See why nextra and check the evaluation of required functions below
 
+## 🎯 Goals
+
+- Evaluate Nextra as a modern documentation solution
+- Test migration feasibility from Docusaurus
+- Explore new documentation features and improvements
+
 ## Why Nextra?
 
 - 🎨 Better Customization
@@ -46,12 +52,6 @@ that version i would choose nextra
 In summary I would very much prefer to migrate to nextra as a solid, future
 ready framework that let's devs extend every aspect and rather focus on building
 than working around mdx framework settings.
-
-## 🎯 Goals
-
-- Evaluate Nextra as a modern documentation solution
-- Test migration feasibility from Docusaurus
-- Explore new documentation features and improvements
 
 ## Evaluation
 
