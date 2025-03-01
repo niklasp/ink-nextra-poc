@@ -39,9 +39,9 @@ Docusaurus has very
 I ended up with copying the docs plugin and extending it, which was not easy due
 to missing typings. Swizzled components for (e.g. sidebar) broke when migrating
 to docusaurus 3.x. I feel that the plugin infrastrucutre is not contemporary. I
-started a
-[new (stale) version for polkadot.study](https://github.com/PolkadotStudy/polkadot.study/tree/staging/plugin-content-tutorials)
-only based on mdx parsers (no nextra)
+started a [new (stale) version for polkadot.study](https://psnew.vercel.app/)
+only based on mdx parsers (no nextra) and can say that when i continue building
+that version i would choose nextra
 
 In summary I would very much prefer to migrate to nextra as a solid, future
 ready framework that let's devs extend every aspect and rather focus on building
