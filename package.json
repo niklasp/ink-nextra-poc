@@ -1,13 +1,13 @@
 {
-  "name": "ink-nextra",
   "packageManager": "pnpm@10.5.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "export": "next build",
-    "postbuild": "npm run create-llm-file",
+    "postbuild": "pnpm run create-llm-file && pnpm run pagefind",
     "start": "next start",
     "lint": "next lint",
+    "pagefind": "pagefind --site .next/server/app --output-path public/_pagefind",
     "create-llm-file": "npx repomix --style markdown -o llms.txt -i \"*.svg,static/**,node_modules/**,.next/**,public/**,build/**,out/**\"",
     "create-llm-file-remote": "npx repomix --remote https://github.com/use-ink/ink-docs --style markdown -o llms.txt -i \"*.svg,static/**\""
   },
@@ -43,8 +43,5 @@
         "./*"
       ]
     }
-  },
-  "engines": {
-    "node": ">=18.19.0"
   }
 }

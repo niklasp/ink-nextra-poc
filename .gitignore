@@ -2,3 +2,6 @@ node_modules/
 .next/
 .env
 _pagefind/
+llms.txt
+out/
+.DS_Store
