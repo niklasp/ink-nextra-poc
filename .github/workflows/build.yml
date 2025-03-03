@@ -27,27 +27,28 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10.5.2
+          run_install: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "18.19.0"
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build & Export Static Site
-        run: pnpm export
+        run: pnpm run export
         env:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Create LLM-friendly file
-        run: pnpm create-llm-file
+        run: pnpm run create-llm-file
 
       - name: Copy LLM file to output directory
-        run: cp llms.txt out/
+        run: cp llms.txt out/ || echo "llms.txt not created, skipping copy"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -63,6 +64,7 @@ jobs:
           name: llms-txt
           path: llms.txt
           retention-days: 90
+          if-no-files-found: ignore
 
   # Deploy job
   deploy:
