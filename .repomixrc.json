@@ -1,0 +1,30 @@
+{
+  "output": {
+    "filePath": "llms.txt",
+    "format": "markdown",
+    "includeRepoStructure": true,
+    "removeComments": false,
+    "charset": "utf-8"
+  },
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "*.svg",
+      "static/**",
+      "node_modules/**",
+      ".next/**",
+      "public/**",
+      "build/**",
+      "out/**",
+      "*.png",
+      "*.jpg",
+      "*.jpeg",
+      "*.gif",
+      "*.ico"
+    ]
+  },
+  "security": {
+    "enableSecurityCheck": true
+  }
+}

@@ -27,6 +27,8 @@ See why nextra and check the evaluation of required functions below
   - Uses latest React and Next.js features (don't have to wait for docusaurus
     releases (plugin) updates to support latest react versions)
   - Enhanced SEO capabilities
+  - more modern look and feel for docs layout (sidebar, scrollspy) than default
+    docusaurus
 
 - 💻 Developer Experience
   - super TypeScript support

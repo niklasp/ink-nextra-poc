@@ -1,16 +1,20 @@
 {
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
-    "start": "next start"
+    "export": "next build",
+    "postbuild": "npm run create-llm-file",
+    "start": "next start",
+    "lint": "next lint",
+    "create-llm-file": "npx repomix --style markdown -o llms.txt -i \"*.svg,static/**,node_modules/**,.next/**,public/**,build/**,out/**\"",
+    "create-llm-file-remote": "npx repomix --remote https://github.com/use-ink/ink-docs --style markdown -o llms.txt -i \"*.svg,static/**\""
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^2.0.12",
     "@tailwindcss/postcss": "^4.0.6",
     "clsx": "^2.1.1",
     "lottie-react": "^2.4.1",
-    "next": "^15.2.0",
+    "next": "^15.1.7",
     "nextra": "^4.2.12",
     "nextra-theme-docs": "^4.2.12",
     "react": "^19.0.0",
