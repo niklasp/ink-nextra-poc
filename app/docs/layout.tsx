@@ -23,38 +23,27 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const pageMap = await getPageMap();
+  // const filteredPageMap = pageMap.filter((page) => page.path !== "/");
+  //
   return (
-    <html
-      lang="en"
-      dir="ltr"
-      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
-      suppressHydrationWarning
+    <Layout
+      navbar={navbar}
+      pageMap={pageMap}
+      docsRepositoryBase="https://github.com/niklasp/ink-nextra-poc/tree/main"
+      footer={footer}
+      sidebar={{
+        autoCollapse: true,
+        defaultOpen: true,
+        defaultMenuCollapseLevel: 1,
+        toggleButton: true,
+      }}
+      navigation={{
+        prev: true,
+        next: true,
+      }}
     >
-      <Head
-      // ... Your additional head options
-      >
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
-      </Head>
-      <body className="min-h-screen font-sans antialiased">
-        <Layout
-          navbar={navbar}
-          pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
-          footer={footer}
-          sidebar={{
-            autoCollapse: true,
-            defaultOpen: true,
-            defaultMenuCollapseLevel: 1,
-          }}
-          navigation={{
-            prev: true,
-            next: true,
-          }}
-        >
-          {children}
-          {/* <pre>{JSON.stringify(pageMap, null, 2)}</pre> */}
-        </Layout>
-      </body>
-    </html>
+      {children}
+      {/* <pre>{JSON.stringify(pageMap, null, 2)}</pre> */}
+    </Layout>
   );
 }

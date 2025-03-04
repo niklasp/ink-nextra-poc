@@ -72,3 +72,9 @@ than working around mdx framework settings.
 | 📊 SEO                 |   ✅   | Proven [next.js metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata) and static sites for fast loading.                                                                            |
 | Mobile Responsiveness  |   ✅   | nextra doc layout responsive out of the box with collapsible and autocollapsing left toc sidebar, scrollspy right sidebar                                                                                          |
 | 🌙 Dark Mode           |   ✅   | Implemented with Tailwind and [next-themes](https://github.com/pacocoursey/next-themes#readme)                                                                                                                     |
+
+## scripts
+
+```bash
+npx tsx scripts/migrate-image-links.ts
+```

@@ -9,7 +9,8 @@
     "lint": "next lint",
     "pagefind": "pagefind --site .next/server/app --output-path public/_pagefind",
     "create-llm-file": "npx repomix --style markdown -o llms.txt -i \"*.svg,static/**,node_modules/**,.next/**,public/**,build/**,out/**\"",
-    "create-llm-file-remote": "npx repomix --remote https://github.com/use-ink/ink-docs --style markdown -o llms.txt -i \"*.svg,static/**\""
+    "create-llm-file-remote": "npx repomix --remote https://github.com/use-ink/ink-docs --style markdown -o llms.txt -i \"*.svg,static/**\"",
+    "migrate-images": "ts-node scripts/migrate-image-links.ts"
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^2.0.12",

@@ -67,3 +67,7 @@ html {
     linear-gradient(to top, transparent, #000 20px, transparent 100%);
   @apply contrast-more:[mask-image:none];
 }
+
+main img:first-of-type {
+  @apply mt-4;
+}

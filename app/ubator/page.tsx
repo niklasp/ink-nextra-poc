@@ -1,4 +1,3 @@
-import InkubatorPage from "@/src/components/pg-inkubator";
 import { Hero } from "@/src/components/pg-inkubator/Hero";
 import { BuilderTrack } from "@/src/components/pg-inkubator/BuildTrack";
 import { EcosystemGrants } from "@/src/components/pg-inkubator/EcosystemGrants";
