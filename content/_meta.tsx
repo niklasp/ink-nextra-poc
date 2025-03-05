@@ -11,6 +11,9 @@ export default {
   "getting-started": {
     title: "Getting Started",
   },
+  basics: {
+    title: "Basics",
+  },
   // "ink!ubator": {
   //   title: "ink!ubator",
   //   type: "page",

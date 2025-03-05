@@ -4,12 +4,12 @@ hide_title: true
 slug: /basics/contract-template
 ---
 
-<img src="/img/title/macro.svg" className="titlePic" />
+![Macro](/img/title/macro.svg)
 
 # Contract Template
 
-On this page we'll go over how to create a basic contract and explain
-its elements.
+On this page we'll go over how to create a basic contract and explain its
+elements.
 
 ## Creating a template
 
@@ -25,7 +25,8 @@ This will create a new project folder named `foobar`.
 cd foobar/
 ```
 
-In the `lib.rs` file you find initial scaffolded code, which you can use as a starting point.
+In the `lib.rs` file you find initial scaffolded code, which you can use as a
+starting point.
 
 Quickly check that it compiles, and the trivial tests pass with:
 
@@ -43,11 +44,10 @@ If everything looks good, then we are ready to start programming!
 
 ## Template Content
 
-The template contains scaffolded code that provides a starting point
-for writing an ink! contract. In the following we'll take a look
-at what the files contain.
-The files you get locally will look similar, just that we added
-explanatory comments here.
+The template contains scaffolded code that provides a starting point for writing
+an ink! contract. In the following we'll take a look at what the files contain.
+The files you get locally will look similar, just that we added explanatory
+comments here.
 
 ### `Cargo.toml`
 
@@ -91,13 +91,12 @@ e2e-tests = []
 
 Every ink! contract is required to contain:
 
-* Exactly one `#[ink(storage)]` struct.
-* At least one `#[ink(constructor)]` function.
-* At least one `#[ink(message)]` function.
+- Exactly one `#[ink(storage)]` struct.
+- At least one `#[ink(constructor)]` function.
+- At least one `#[ink(message)]` function.
 
-The scaffolded code will look similar to the following, we've
-changed the comments though to explain what is going on there
-on a high level.
+The scaffolded code will look similar to the following, we've changed the
+comments though to explain what is going on there on a high level.
 
 ```rust
 // If the `std` feature from the `Cargo.toml` is not enabled

@@ -1,7 +1,7 @@
 import { Head } from "nextra/components";
 import "@/app/globals.scss";
 import "@/style/ink.scss";
-import "@/style/legacy.scss";
+// import "@/style/legacy.scss";
 
 export default function RootLayout({
   children,
@@ -16,13 +16,21 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <Head
-      // ... Your additional head options
+        color={{
+          hue: 280,
+          saturation: {
+            dark: 70,
+            light: 70,
+          },
+          lightness: {
+            dark: 70,
+            light: 60,
+          },
+        }}
       >
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
-      <body className="dark min-h-screen font-sans antialiased">
-        {children}
-      </body>
+      <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );
 }

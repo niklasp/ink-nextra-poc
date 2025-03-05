@@ -1,0 +1,17 @@
+export default {
+  "contract-template": "Contract Template",
+  "storing-values": "Storing Values",
+  "reading-values": "Reading Values",
+  "mutating-values": "Mutating Values",
+  events: "Events",
+  selectors: "Selectors",
+  "trait-definitions": "Trait Definitions",
+  gas: "Gas",
+  "cross-contract-calling": "Cross-Contract Calling",
+  upgradeability: "Upgradeability",
+  "env-functions": "Env Functions",
+  environment: "Environment",
+  metadata: "Metadata",
+  xcm: "XCM",
+  verification: "Verification",
+};

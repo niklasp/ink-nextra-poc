@@ -3,6 +3,7 @@ import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 
 import "nextra-theme-docs/style.css";
+import { Folder, PageMapItem } from "nextra";
 
 export const metadata = {
   // Define your metadata here
@@ -23,12 +24,22 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const pageMap = await getPageMap();
-  // const filteredPageMap = pageMap.filter((page) => page.path !== "/");
-  //
+  // remove the index page from page map and make docs top level
+  // the page map contains
+  // index: {...}
+  // docs: { children: [...]}
+  // ubator: {...}
+  const filteredPageMap = pageMap.filter(
+    (page: PageMapItem) =>
+      typeof page === "object" && "route" in page && page.route !== "/"
+  );
+  const docsPageMap = filteredPageMap.find(
+    (page: PageMapItem) => "name" in page && page.name === "docs"
+  ) as Folder;
   return (
     <Layout
       navbar={navbar}
-      pageMap={pageMap}
+      pageMap={[...docsPageMap?.children]}
       docsRepositoryBase="https://github.com/niklasp/ink-nextra-poc/tree/main"
       footer={footer}
       sidebar={{

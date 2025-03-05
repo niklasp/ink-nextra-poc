@@ -4,7 +4,7 @@ slug: /basics/reading-values
 hide_title: true
 ---
 
-<img src="/img/title/storage-read.svg" className="titlePic" />
+![Title Picture](/img/title/storage-read.svg)
 
 # Reading Values from Storage
 
@@ -12,7 +12,8 @@ Reading from storage is where the fun begins!
 
 ## Contract Functions
 
-As you can see in the contract template, all of your contract functions are part of your contract module.
+As you can see in the contract template, all of your contract functions are part
+of your contract module.
 
 ```rust
 impl MyContract {
@@ -22,8 +23,9 @@ impl MyContract {
 
 ### Public and Private Functions
 
-In Rust, you can make as many implementations as you want. As a stylistic choice, we recommend
-breaking up your implementation definitions for your private and public functions:
+In Rust, you can make as many implementations as you want. As a stylistic
+choice, we recommend breaking up your implementation definitions for your
+private and public functions:
 
 ```rust
 impl MyContract {
@@ -48,8 +50,8 @@ Note that all public functions must use the `#[ink(message)]` attribute.
 
 ## Getting a Value
 
-We already showed you how to initialize a storage value in the chapter [Storing Values](./storing-values.md).
-Getting the value is just as simple:
+We already showed you how to initialize a storage value in the chapter
+[Storing Values](./storing-values.md). Getting the value is just as simple:
 
 ```rust
 impl MyContract {
@@ -60,4 +62,5 @@ impl MyContract {
 }
 ```
 
-In Rust, if the last expression in a function does not have a semicolon it will be the return value.
+In Rust, if the last expression in a function does not have a semicolon it will
+be the return value.

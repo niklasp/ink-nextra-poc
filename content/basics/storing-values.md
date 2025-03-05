@@ -4,7 +4,7 @@ slug: /basics/storing-values
 hide_title: true
 ---
 
-<img src="/img/title/storage.svg" className="titlePic" />
+![Title Picture](/img/title/storage.svg)
 
 # Storing Values
 
@@ -24,17 +24,27 @@ pub struct MyContract {
 ## Supported Types
 
 Substrate contracts may store types that are encodable and decodable with
-[Parity Codec](https://github.com/paritytech/parity-codec) which includes most Rust common data
-types such as `bool`, `u{8,16,32,64,128}`, `i{8,16,32,64,128}`, `String`, tuples, and arrays.
+[Parity Codec](https://github.com/paritytech/parity-codec) which includes most
+Rust common data types such as `bool`, `u{8,16,32,64,128}`, `i{8,16,32,64,128}`,
+`String`, tuples, and arrays.
 
-Furthermore, ink! provides [substrate](https://substrate.io/) specific types like `AccountId`, `Balance`, and `Hash` to smart contracts as if
-they were primitive types.
+Furthermore, ink! provides [substrate](https://substrate.io/) specific types
+like `AccountId`, `Balance`, and `Hash` to smart contracts as if they were
+primitive types.
 
 ### String, Vector and More
 
-The [`ink_prelude`](https://docs.rs/ink_prelude/5.0.0/ink_prelude/index.html) crate provides an efficient approach to import commonly used Rust types such as `String` and `Vec`, ensuring safe usage within an ink! contract.
+The [`ink_prelude`](https://docs.rs/ink_prelude/5.0.0/ink_prelude/index.html)
+crate provides an efficient approach to import commonly used Rust types such as
+`String` and `Vec`, ensuring safe usage within an ink! contract.
 
-This simplifies the type referencing process between the `std` and `no_std` environments. Typically, these types are defined within the `std` crate in the `std` environment, and the `alloc` crate in the `no_std` environment. Given that ink! smart contract code is compiled in both environments (`no_std` for production and `std` for unit tests), developers might find themselves writing intricate conditional compilation macros. The `ink_prelude` crate conveniently re-exports these types, eliminating this complexity.
+This simplifies the type referencing process between the `std` and `no_std`
+environments. Typically, these types are defined within the `std` crate in the
+`std` environment, and the `alloc` crate in the `no_std` environment. Given that
+ink! smart contract code is compiled in both environments (`no_std` for
+production and `std` for unit tests), developers might find themselves writing
+intricate conditional compilation macros. The `ink_prelude` crate conveniently
+re-exports these types, eliminating this complexity.
 
 You can use the prelude definitions like this:
 
@@ -57,11 +67,13 @@ mod MyContractWithStringsAndArrays {
 
 ### Mapping
 
-ink! also provides a `Mapping` storage type. You can read more about it [here](../datastructures/mapping.md).
+ink! also provides a `Mapping` storage type. You can read more about it
+[here](../datastructures/mapping.md).
 
 ### Substrate Types
 
-Here is an example of how you would store substrate types `AccountId`, `Balance` and `Hash`:
+Here is an example of how you would store substrate types `AccountId`, `Balance`
+and `Hash`:
 
 ```rust
 #[ink::contract]
@@ -83,7 +95,8 @@ mod MyContract {
 
 ### Enum
 
-Enum can be used as a datatype as well. It's use in the example in the [Struct](#struct) section.
+Enum can be used as a datatype as well. It's use in the example in the
+[Struct](#struct) section.
 
 ```rust
 pub enum Status {
@@ -98,7 +111,8 @@ pub enum Status {
 
 ### Struct
 
-You can even combine all the above mentioned types in a custom `struct` which you can then store in the contract's storage.
+You can even combine all the above mentioned types in a custom `struct` which
+you can then store in the contract's storage.
 
 ```rust
 mod MyContract {
@@ -132,11 +146,12 @@ The values of an enum should be referenced as `Status::OpeningPeriod`.
 
 ## Initializing Storage in Constructors
 
-Constructors are how values get initialized.
-Every ink! smart contract must have a constructor which is run once when a contract is created. ink! smart contracts can have multiple constructors:
+Constructors are how values get initialized. Every ink! smart contract must have
+a constructor which is run once when a contract is created. ink! smart contracts
+can have multiple constructors:
 
-Note that if you have a contract whose storage contains `Mapping'`s you will need to use
-`ink_lang::utils::initialize_contract` in your constructor. See the
+Note that if you have a contract whose storage contains `Mapping'`s you will
+need to use `ink_lang::utils::initialize_contract` in your constructor. See the
 [`Mapping` documentation](../datastructures/mapping.md) for more details.
 
 ```rust

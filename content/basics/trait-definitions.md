@@ -4,14 +4,18 @@ slug: /basics/trait-definitions
 hide_title: true
 ---
 
-<img src="/img/title/text/trait.svg" className="titlePic" />
+![Title Picture](/img/title/text/trait.svg)
 
-Through the `#[ink::trait_definition]` proc. macro it is now possible to define your very own trait definitions that are then implementable by ink! smart contracts.
+Through the `#[ink::trait_definition]` proc. macro it is now possible to define
+your very own trait definitions that are then implementable by ink! smart
+contracts.
 
-This allows to define shared smart contract interfaces to different concrete implementations.
-Note that this ink! trait definition can be defined anywhere, even in another crate!
+This allows to define shared smart contract interfaces to different concrete
+implementations. Note that this ink! trait definition can be defined anywhere,
+even in another crate!
 
-See our [`ERC20-Trait example contract`](https://github.com/use-ink/ink-examples/blob/main/trait-erc20/lib.rs) 
+See our
+[`ERC20-Trait example contract`](https://github.com/use-ink/ink-examples/blob/main/trait-erc20/lib.rs)
 for an elaborate example which uses trait definitions.
 
 ### Example
@@ -31,7 +35,8 @@ pub trait BaseErc20 {
 }
 ```
 
-An ink! smart contract definition can then implement this trait definition as follows:
+An ink! smart contract definition can then implement this trait definition as
+follows:
 
 ```rust
 #[ink::contract]
@@ -43,7 +48,7 @@ mod erc20 {
         total_supply: Balance,
         // more fields ...
     }
-    
+
     impl Erc20 {
         /// Creates a new ERC-20 contract and initializes it with the initial supply for the instantiator.
         #[ink(constructor)]
@@ -66,7 +71,8 @@ mod erc20 {
 }
 ```
 
-Calling the above `Erc20` explicitly through its trait implementation can be done just as if it was normal Rust code:
+Calling the above `Erc20` explicitly through its trait implementation can be
+done just as if it was normal Rust code:
 
 ```rust
 // --- Instantiating the ERC-20 contract:
@@ -84,18 +90,18 @@ use base_erc20::BaseErc20;
 assert_eq!(erc20.total_supply(), 1000);
 ```
 
-There are still many limitations to ink! trait definitions and trait implementations.
-For example, it is not possible to define associated constants or types or have default implemented methods.
-These limitations exist because of technical intricacies, however, please expect that many of those will be tackled in future ink! releases.
-
-
-
+There are still many limitations to ink! trait definitions and trait
+implementations. For example, it is not possible to define associated constants
+or types or have default implemented methods. These limitations exist because of
+technical intricacies, however, please expect that many of those will be tackled
+in future ink! releases.
 
 Marks trait definitions to ink! as special ink! trait definitions.
 
-There are some restrictions that apply to ink! trait definitions that
-this macro checks. Also ink! trait definitions are required to have specialized
-structure so that the main [`#[ink::contract]`](https://docs.rs/ink/5.0.0/ink/attr.contract.html) macro can
+There are some restrictions that apply to ink! trait definitions that this macro
+checks. Also ink! trait definitions are required to have specialized structure
+so that the main
+[`#[ink::contract]`](https://docs.rs/ink/5.0.0/ink/attr.contract.html) macro can
 properly generate code for its implementations.
 
 # Example: Definition
@@ -153,5 +159,3 @@ mod base_erc20 {
     }
 }
 ```
-
-
