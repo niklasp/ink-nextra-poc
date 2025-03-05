@@ -4,6 +4,7 @@ import { getPageMap } from "nextra/page-map";
 
 import "nextra-theme-docs/style.css";
 import { Folder, PageMapItem } from "nextra";
+import Image from "next/image";
 
 export const metadata = {
   // Define your metadata here
@@ -12,11 +13,19 @@ export const metadata = {
 
 const navbar = (
   <Navbar
-    logo={<b>ink!</b>}
-    // ... Your additional navbar options
+    logo={
+      <Image
+        className="dark:invert"
+        src="/img/text-black.svg"
+        alt="ink!"
+        width={60}
+        height={60}
+        priority
+      />
+    }
   />
 );
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
+const footer = <Footer>MIT {new Date().getFullYear()} © ink!.</Footer>;
 
 export default async function RootLayout({
   children,
